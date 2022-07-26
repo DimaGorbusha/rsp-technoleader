@@ -1,22 +1,27 @@
-from flask import Flask
+from flask import Flask, render_template
 import requests
+from Logger import Logger
 
 
 class Interface():
-    def __init__(self, url: str, url_callback: str) -> None:
+    def __init__(self, url: str, url_callback: str, service_name: str) -> None:
         self.url = url
         self.url_callback = url_callback
+        self.logger = Logger(service_name)
 
 
-    def activate_web_server(self) -> None:
+    def activate_web_server(self):
         self.app = Flask(__name__)
         @self.app.route('/{}'.format(self.url), methods=['GET'])
         def sns_input():
-            pass
+            self.logger.log_service("бэброчка")
+            return render_template("<h1></h1>")
+            
 
         @self.app.route('/{}'.format(self.url_callback), methods=['GET'])
         def callback_input():
-            pass
+            return "Please"
+
 
         self.app.run(host='127.0.0.1', port=5000, debug=True)
 
