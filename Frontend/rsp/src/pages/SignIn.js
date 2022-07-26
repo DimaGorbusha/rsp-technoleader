@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../img/logo.png"
 import { IdcardTwoTone, LockTwoTone } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
@@ -38,7 +38,7 @@ export function SignIn() {
             <Input prefix={<IdcardTwoTone />} placeholder="Логин" />
           </Form.Item>
           <Form.Item
-            name="password"s
+            name="password"
             rules={[
               {
                 required: true,
@@ -59,13 +59,14 @@ export function SignIn() {
               <Checkbox>Запомнить меня</Checkbox>
             </Form.Item>
           </Form.Item>
+
           <Form.Item>
             <Button type="primary" htmlType="submit" className="login-form-button">
               Войти
             </Button>
           </Form.Item>
         </Form>
-        <p className="font-normal text-[14px] text-[#8c8c8c] mt-[80px]">Если у вас есть проблемы со входом, обратитесь<br/>к администратору для восстановления доступа:<br/>
+        <p className="font-normal text-[14px] text-[#8c8c8c] mt-[80px]">Если у вас есть проблемы со входом, обратитесь<br/>к администратору для восстановления доступа:<br/>
 8 800 555-33-22 или super-admin@ummc.ru</p>
         <p className='font-normal text-[14px] text-[#8c8c8c] mt-[145px]'>© 2022, UMMC, v1.0</p>
         </div>
