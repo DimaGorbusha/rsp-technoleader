@@ -18,6 +18,8 @@ class Interface():
         def callback_input():
             pass
 
+        self.app.run(host='127.0.0.1', port=5000, debug=True)
+
         
 
     def send_data(self, json_data: dict) -> None:
