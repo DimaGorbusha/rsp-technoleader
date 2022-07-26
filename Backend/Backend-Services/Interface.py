@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 import requests
 from Logger import Logger
 
@@ -11,21 +11,8 @@ class Interface():
 
 
     def activate_web_server(self):
-        self.app = Flask(__name__)
-        @self.app.route('/{}'.format(self.url), methods=['GET'])
-        def sns_input():
-            self.logger.log_service("бэброчка")
-            return render_template("<h1></h1>")
-            
+        pass
 
-        @self.app.route('/{}'.format(self.url_callback), methods=['GET'])
-        def callback_input():
-            return "Please"
-
-
-        self.app.run(host='127.0.0.1', port=5000, debug=True)
-
-        
 
     def send_data(self, json_data: dict) -> None:
         pass
