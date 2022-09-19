@@ -5,7 +5,7 @@ import SideMenu from '../components/SideMenu'
 export default function Requests() {
   return (
     <div>
-        <TopBar/>
+        <TopBar name={"Поскакалов Артур Эдуардович"}/>
         <SideMenu/>
     </div>
   )
