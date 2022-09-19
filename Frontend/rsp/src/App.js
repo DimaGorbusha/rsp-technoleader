@@ -1,6 +1,6 @@
 // import { Button } from 'antd';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SignIn } from './pages/SignIn.js';
+import SignIn from './pages/SignIn.js';
  
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
     <Router>
           <Routes>
               <Route path='/' element={<SignIn />} />
+
           </Routes>
       </Router>
   </div>

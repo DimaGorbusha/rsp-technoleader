@@ -8,7 +8,7 @@ import { Button, Checkbox, Form, Input } from 'antd';
 // const DOMEN_SERVER = '';
 // const DOMEN_SITE = '';
 
-export function SignIn() {
+export default function SignIn() {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
