@@ -3,9 +3,9 @@ import topBarLogo from '../img/topBarLogo.svg'
 
 export default function TopBar(props) {
   return (
-    <div className='flex'>
-        <img src={topBarLogo} alt=""/>
-        <h1>props.name</h1>
+    <div className='flex mt-[11px] align-middle'>
+        <img src={topBarLogo} alt="" className='ml-[16px]'/>
+        <h1 className='ml-[1094px] text-[14px]'>{ props.name }</h1>
     </div>
   )
 }
