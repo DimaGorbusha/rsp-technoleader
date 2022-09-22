@@ -8,8 +8,8 @@ export default function Header(props) {
     };
 
     return (
-        <div className='flex'>
-            <h1 className='mr-[926px] text-[24px]'>Заявки  <span className='text-[#BFBFBF]'>{props.requestCount}</span></h1>
+        <div className='flex ml-[23px]'>
+            <h1 className='mr-[970px] text-[24px]'>Заявки  <span className='text-[#BFBFBF]'>{props.requestCount}</span></h1>
             <Button type="primary" onClick={handleClick}>Создать заявку</Button>
         </div>
     )

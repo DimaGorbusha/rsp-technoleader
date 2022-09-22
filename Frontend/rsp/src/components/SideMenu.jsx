@@ -4,12 +4,12 @@ import React from 'react';
 
 const menuList = [
   {
-      url: "/requests",
+      url: "requests",
       name: "Заявки",
       icon: <FolderOutlined />
   },
   {
-      url: "/reserveList",
+      url: "reserveList",
       name: "Резервный список",
       icon: <BookOutlined />,
   },
@@ -34,9 +34,12 @@ const SideMenu = () => {
   return (
       <>
           <Menu
-              style={{ paddingTop: "10px" }}
               theme="light"
               mode="inline"
+              style={{
+                width: 208,
+              }}
+
           >
               {menuList.map((el) => (
                   <Menu.Item key={el.url} icon={el.icon}>
