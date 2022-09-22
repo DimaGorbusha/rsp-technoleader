@@ -2,40 +2,49 @@ import { BookOutlined, FolderOutlined, TeamOutlined, MessageOutlined, BellOutlin
 import { Menu } from 'antd';
 import React from 'react';
 
-function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
-
-const items = [
-  getItem('Заявки', 'requests', <FolderOutlined />),
-  getItem('Резервный список', 'reserveList', <BookOutlined />),
-  getItem('Собеседования', 'interview', <TeamOutlined />),
-  getItem('Связь с резервом', 'reserveConnection', <MessageOutlined />),
-  getItem('Уведомления', 'notifications', <BellOutlined />),
+const menuList = [
+  {
+      url: "/requests",
+      name: "Заявки",
+      icon: <FolderOutlined />
+  },
+  {
+      url: "/reserveList",
+      name: "Резервный список",
+      icon: <BookOutlined />,
+  },
+  {
+      url: "interviews",
+      name: "Собеседования",
+      icon: <TeamOutlined />,
+  },
+  {
+      url: "reserveConnection",
+      name: "Связь с резервом",
+      icon: <MessageOutlined />,
+  },
+  {
+      url: "notifications",
+      name: "Уведомления",
+      icon: <BellOutlined />,
+  },
 ];
 
 const SideMenu = () => {
-  const onClick = (e) => {
-    console.log('click ', e);
-  };
-
   return (
-    <Menu
-      onClick={onClick}
-      style={{
-        width: 208,
-      }}
-      defaultSelectedKeys={['requests']}
-      defaultOpenKeys={['sub1']}
-      mode="inline"
-      items={items}
-    />
+      <>
+          <Menu
+              style={{ paddingTop: "10px" }}
+              theme="light"
+              mode="inline"
+          >
+              {menuList.map((el) => (
+                  <Menu.Item key={el.url} icon={el.icon}>
+                      <a href={el.url}>{el.name}</a>
+                  </Menu.Item>
+              ))}
+          </Menu>
+      </>
   );
 };
 
